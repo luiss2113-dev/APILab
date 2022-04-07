@@ -3,7 +3,6 @@ var connection = require('../lib/db')
 var mysql = require('mysql');
 
 function insertarMedicamento(data, callback) {
-    console.log(data)
     let inserQuery = "INSERT INTO Producto (nombre, detalle, precioVenta) VALUES (?, ?, ?)"
     let query = mysql.format(inserQuery, [data.nombre, data.detalle, data.precio]);
     connection.query(query, function (err, result) {
